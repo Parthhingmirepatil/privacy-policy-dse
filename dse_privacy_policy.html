@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – DSE Admission Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F7F7F5;
+      --surface: #FFFFFF;
+      --border: rgba(0,0,0,0.10);
+      --text-primary: #1A1A18;
+      --text-secondary: #555550;
+      --text-muted: #888880;
+      --accent: #1D9E75;
+      --accent-light: #E1F5EE;
+      --info: #185FA5;
+      --info-light: #E6F1FB;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+    .page { max-width: 820px; margin: 0 auto; }
+
+    /* Hero */
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50px; right: -50px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: var(--accent-light); opacity: 0.6;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--info-light); color: var(--info);
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem; font-weight: 600; line-height: 1.2;
+      margin-bottom: 0.6rem; color: var(--text-primary);
+    }
+    .hero .subtitle { font-size: 0.9rem; color: var(--text-secondary); max-width: 600px; }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      margin-top: 1.5rem; padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--text-muted);
+    }
+    .meta strong { color: var(--text-primary); font-weight: 500; }
+
+    /* TOC */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .toc-title {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;
+    }
+    .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 2rem; }
+    .toc-link {
+      font-size: 13.5px; color: var(--info); text-decoration: none;
+      padding: 5px 0; display: flex; align-items: center; gap: 8px;
+    }
+    .toc-link:hover { color: var(--text-primary); }
+    .toc-num { font-size: 11px; color: var(--text-muted); min-width: 20px; }
+
+    /* Sections */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .sec-header {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.25rem; padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-num {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 500; color: var(--text-muted);
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--text-primary); line-height: 1.3;
+    }
+    h4 {
+      font-size: 13.5px; font-weight: 500;
+      color: var(--text-primary); margin: 1.1rem 0 0.4rem;
+    }
+    p { font-size: 14px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 0.85rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0.5rem 0 0.85rem; padding: 0; list-style: none; }
+    li {
+      font-size: 14px; line-height: 1.75; color: var(--text-secondary);
+      display: flex; align-items: flex-start; gap: 10px; margin-bottom: 7px;
+    }
+    li::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); margin-top: 10px; flex-shrink: 0;
+    }
+    strong { color: var(--text-primary); font-weight: 500; }
+    .highlight {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 0.9rem 1.1rem;
+      margin: 0.85rem 0;
+      font-size: 13.5px; line-height: 1.75; color: var(--text-secondary);
+    }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+    .chip {
+      font-size: 12px; font-weight: 500;
+      padding: 5px 12px; border-radius: 20px;
+      background: var(--accent-light); color: #0F6E56;
+    }
+    .contact-box {
+      background: var(--bg); border-radius: var(--radius-md);
+      padding: 1rem 1.25rem; margin-top: 0.75rem;
+    }
+    .contact-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 6px 0; font-size: 13.5px; color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row a { color: var(--info); text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+    .footer {
+      text-align: center; margin-top: 2.5rem;
+      font-size: 12px; color: var(--text-muted); line-height: 2;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.25rem; }
+      .section { padding: 1.5rem 1.25rem; }
+      .toc-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="badge">&#128274; Privacy Policy</div>
+    <h1>DSE Admission Finder</h1>
+    <p class="subtitle">We are committed to protecting your personal information and your right to privacy. This policy explains how we collect, use, and safeguard your data when you use our platform.</p>
+    <div class="meta">
+      <span><strong>Effective Date:</strong> May 30, 2025</span>
+      <span><strong>Last Updated:</strong> May 30, 2025</span>
+      <span><strong>Applies To:</strong> Website &amp; Mobile Application</span>
+      <span><strong>Jurisdiction:</strong> India</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#s1"><span class="toc-num">01</span> Information We Collect</a>
+      <a class="toc-link" href="#s2"><span class="toc-num">02</span> How We Use Your Information</a>
+      <a class="toc-link" href="#s3"><span class="toc-num">03</span> Data Sharing &amp; Third Parties</a>
+      <a class="toc-link" href="#s4"><span class="toc-num">04</span> Data Security</a>
+      <a class="toc-link" href="#s5"><span class="toc-num">05</span> Children's Privacy</a>
+      <a class="toc-link" href="#s6"><span class="toc-num">06</span> Your Rights</a>
+      <a class="toc-link" href="#s7"><span class="toc-num">07</span> Data Retention</a>
+      <a class="toc-link" href="#s8"><span class="toc-num">08</span> Changes to This Policy</a>
+      <a class="toc-link" href="#s9"><span class="toc-num">09</span> Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section" id="s1">
+    <div class="sec-header">
+      <div class="sec-num">01</div>
+      <div><div class="sec-title">Information We Collect</div></div>
+    </div>
+    <h4>Information You Provide Directly</h4>
+    <p>When you register or use DSE Admission Finder, we may collect the following personal information that you voluntarily provide:</p>
+    <ul>
+      <li>Full name and email address</li>
+      <li>Academic scores and examination results (e.g., HSC/SSC marks, CET scores)</li>
+      <li>Student category (e.g., General, OBC, SC, ST, EWS, or other reserved categories)</li>
+      <li>Preferred engineering branch or discipline</li>
+      <li>Location preferences (city, district, or state)</li>
+      <li>Any additional details you submit through forms or profile settings</li>
+    </ul>
+    <h4>Information Collected Automatically</h4>
+    <p>When you access our website or application, certain data is collected automatically through standard web technologies:</p>
+    <ul>
+      <li>Device information (device type, operating system, browser type and version)</li>
+      <li>IP address and approximate geographic location</li>
+      <li>Pages visited, features used, and time spent within the application</li>
+      <li>Referral URLs and clickstream data</li>
+      <li>Crash reports and performance diagnostics</li>
+    </ul>
+    <div class="highlight">We do not collect sensitive personal data such as government ID numbers, financial information, passwords of third-party accounts, or biometric data.</div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="s2">
+    <div class="sec-header">
+      <div class="sec-num">02</div>
+      <div><div class="sec-title">How We Use Your Information</div></div>
+    </div>
+    <p>We use the information we collect solely for legitimate purposes related to providing and improving our services:</p>
+    <ul>
+      <li><strong>Personalized Results:</strong> To display college recommendations, cutoff data, and admission opportunities that are relevant to your academic profile and preferences</li>
+      <li><strong>Account Management:</strong> To create and manage your user account and remember your preferences across sessions</li>
+      <li><strong>Counseling Guidance:</strong> To provide tailored advice and information about the DSE admission and counseling process</li>
+      <li><strong>Communication:</strong> To send you important service updates, admission alerts, or responses to your queries (only if you have opted in)</li>
+      <li><strong>Platform Improvement:</strong> To analyze usage patterns, identify bugs, and improve the overall performance and user experience of the app</li>
+      <li><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, and legal obligations in India</li>
+    </ul>
+    <div class="highlight">We will never use your information for purposes that are inconsistent with this policy without obtaining your prior consent.</div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="s3">
+    <div class="sec-header">
+      <div class="sec-num">03</div>
+      <div><div class="sec-title">Data Sharing &amp; Third-Party Services</div></div>
+    </div>
+    <p><strong>We do not sell, rent, or trade your personal information to any third party.</strong> We may share data only in the following limited and controlled circumstances:</p>
+    <h4>Analytics Providers</h4>
+    <p>We use trusted analytics tools (such as Google Analytics or Firebase Analytics) to understand app usage and improve our service. These providers may collect anonymized usage data subject to their own privacy policies.</p>
+    <h4>Hosting &amp; Infrastructure</h4>
+    <p>Your data may be stored and processed on secure cloud infrastructure providers (such as Google Cloud or AWS) who act as data processors under strict contractual confidentiality obligations.</p>
+    <h4>Legal Requirements</h4>
+    <p>We may disclose your information if required to do so by law, court order, or governmental authority, or if we believe in good faith that such disclosure is necessary to protect our rights, your safety, or the safety of others.</p>
+    <h4>Business Transfers</h4>
+    <p>In the event of a merger, acquisition, or sale of assets, user data may be transferred as part of that transaction. You will be notified via email or a prominent notice on our platform prior to any such transfer.</p>
+    <div class="chip-row">
+      <span class="chip">&#10007; No data sold</span>
+      <span class="chip">&#10007; No advertising networks</span>
+      <span class="chip">&#10007; No unauthorized sharing</span>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="s4">
+    <div class="sec-header">
+      <div class="sec-num">04</div>
+      <div><div class="sec-title">Data Security</div></div>
+    </div>
+    <p>We take the security of your personal data seriously and implement industry-standard technical and organizational measures to protect it from unauthorized access, loss, alteration, or disclosure:</p>
+    <ul>
+      <li>All data in transit is encrypted using HTTPS/TLS protocols</li>
+      <li>Data at rest is stored on secured servers with access controls and encryption</li>
+      <li>Access to personal data is restricted to authorized personnel only, on a need-to-know basis</li>
+      <li>Regular security reviews and vulnerability assessments are conducted on our systems</li>
+    </ul>
+    <div class="highlight">While we implement strong safeguards, no method of transmission over the internet is 100% secure. We encourage you to use a strong password and keep your login credentials confidential. In the event of a data breach that affects your personal information, we will notify you in accordance with applicable law.</div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section" id="s5">
+    <div class="sec-header">
+      <div class="sec-num">05</div>
+      <div><div class="sec-title">Children's Privacy</div></div>
+    </div>
+    <p>DSE Admission Finder is designed to assist students seeking engineering admissions and is intended for users who are at least 13 years of age. Our platform is not directed at children under 13.</p>
+    <p>We do not knowingly collect personal information from children under the age of 13. If you are a parent or guardian and believe your child has provided us with personal data without your consent, please contact us immediately using the details in Section 9. Upon verification, we will promptly delete such information from our records.</p>
+    <p>Users between the ages of 13 and 18 are advised to use the platform with parental or guardian awareness and supervision.</p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section" id="s6">
+    <div class="sec-header">
+      <div class="sec-num">06</div>
+      <div><div class="sec-title">Your Rights</div></div>
+    </div>
+    <p>As a user of DSE Admission Finder, you have the following rights with respect to your personal data. You may exercise any of these rights by contacting us at the email address listed in Section 9:</p>
+    <ul>
+      <li><strong>Right to Access:</strong> Request a copy of the personal information we hold about you</li>
+      <li><strong>Right to Correction:</strong> Request that we correct any inaccurate or incomplete personal data</li>
+      <li><strong>Right to Deletion:</strong> Request the deletion of your personal data, subject to any legal retention obligations</li>
+      <li><strong>Right to Withdraw Consent:</strong> Withdraw your consent to data processing at any time, where processing is based on consent</li>
+      <li><strong>Right to Portability:</strong> Request your data in a commonly used, machine-readable format where technically feasible</li>
+      <li><strong>Right to Object:</strong> Object to certain types of data processing, such as direct marketing or profiling</li>
+    </ul>
+    <p>We will respond to all verified requests within 30 days. In some cases, we may need to verify your identity before fulfilling your request.</p>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section" id="s7">
+    <div class="sec-header">
+      <div class="sec-num">07</div>
+      <div><div class="sec-title">Data Retention</div></div>
+    </div>
+    <p>We retain your personal information only for as long as necessary to fulfill the purposes described in this Privacy Policy, or as required by applicable law.</p>
+    <ul>
+      <li><strong>Active accounts:</strong> Data is retained for the duration of your use of the service</li>
+      <li><strong>Inactive accounts:</strong> Accounts with no activity for 24 consecutive months may be deleted, with prior notice sent to your registered email</li>
+      <li><strong>Upon account deletion:</strong> Personal data is permanently deleted or anonymized within 90 days of your deletion request, except where we are required by law to retain certain records</li>
+      <li><strong>Analytics data:</strong> Aggregated and anonymized analytics data that cannot identify you may be retained indefinitely for research and improvement purposes</li>
+    </ul>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section" id="s8">
+    <div class="sec-header">
+      <div class="sec-num">08</div>
+      <div><div class="sec-title">Changes to This Policy</div></div>
+    </div>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we do, we will revise the "Last Updated" date at the top of this page.</p>
+    <p>For material changes that significantly affect your rights or how we handle your data, we will notify you through one or more of the following methods:</p>
+    <ul>
+      <li>A prominent notice on our website or application</li>
+      <li>An email notification to your registered address</li>
+      <li>An in-app notification or alert</li>
+    </ul>
+    <p>Your continued use of DSE Admission Finder after the effective date of any revised policy constitutes your acceptance of the updated terms. We encourage you to review this policy periodically.</p>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section" id="s9">
+    <div class="sec-header">
+      <div class="sec-num">09</div>
+      <div><div class="sec-title">Contact Us</div></div>
+    </div>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal data, please do not hesitate to reach out to us:</p>
+    <div class="contact-box">
+      <div class="contact-row">&#127970; &nbsp;<strong>DSE Admission Finder</strong></div>
+      <div class="contact-row">&#9993; &nbsp;<a href="mailto:privacy@dseadmissionfinder.in">privacy@dseadmissionfinder.in</a></div>
+      <div class="contact-row">&#127760; &nbsp;<a href="https://www.dseadmissionfinder.in" target="_blank" rel="noopener">www.dseadmissionfinder.in</a></div>
+      <div class="contact-row">&#128205; &nbsp;Maharashtra, India</div>
+    </div>
+    <p style="margin-top:1rem;">We are committed to resolving any privacy-related concerns promptly and transparently. We will acknowledge your inquiry within 72 hours and aim to fully resolve it within 30 days.</p>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 DSE Admission Finder. All rights reserved.</p>
+    <p>This Privacy Policy was last reviewed on May 30, 2025.</p>
+    <p style="margin-top:0.5rem;font-size:11px;">This document is suitable for publication on the DSE Admission Finder website and for submission to the Google Play Console.</p>
+  </div>
+
+</div>
+</body>
+</html>
